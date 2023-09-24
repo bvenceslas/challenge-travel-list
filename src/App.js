@@ -1,57 +1,46 @@
-const initialItems = [
-  { id: 1, description: "Passports", quantity: 2, packed: true },
-  { id: 2, description: "Socks", quantity: 12, packed: false },
-];
+import { useState } from "react";
+import Logo from "./Logo";
+import Form from "./Form";
+import PackingList from "./PackingList";
+import Stats from "./Stats";
 
 export default function App() {
+  const [items, setItems] = useState([]);
+
+  function handleAddItems(item) {
+    setItems((items) => [...items, item]);
+  }
+
+  function handleDeleteItem(id) {
+    setItems((items) => items.filter((itm) => itm.id !== id));
+  }
+
+  function handleToggleItem(id) {
+    setItems((items) =>
+      items.map((itm) =>
+        itm.id === id ? { ...itm, packed: !itm.packed } : itm
+      )
+    );
+  }
+
+  function handleClearList() {
+    const confirmed = window.confirm(
+      "Are you sure you want to clear all the items?"
+    );
+    if (confirmed) setItems([]);
+  }
+
   return (
     <div className="app">
       <Logo />
-      <Form />
-      <PackingList />
-      <Stats />
+      <Form onAddItems={handleAddItems} />
+      <PackingList
+        items={items}
+        onDeleteItem={handleDeleteItem}
+        onToggleItem={handleToggleItem}
+        onClearList={handleClearList}
+      />
+      <Stats items={items} />
     </div>
-  );
-}
-
-function Logo() {
-  return <h1>🏝️ Far Away 🧳</h1>;
-}
-
-function Form() {
-  return (
-    <div className="add-form">
-      <h3>What do you need for your trip ?</h3>
-    </div>
-  );
-}
-
-function PackingList() {
-  return (
-    <div className="list">
-      <ul>
-        {initialItems.map((item) => (
-          <Item item={item} />
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-const Item = ({ item }) => {
-  return (
-    <li>
-      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
-        {item.quantity} {item.description} <button>❌</button>
-      </span>
-    </li>
-  );
-};
-
-function Stats() {
-  return (
-    <footer className="stats">
-      <em>💼 you have X elements on your list, and you have packed X (X%)</em>
-    </footer>
   );
 }
