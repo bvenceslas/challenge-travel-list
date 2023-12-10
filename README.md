@@ -4,7 +4,7 @@ this is a simple travel list
 
 ## Preview
 
-[Travel List](https://bvenceslas.github.io/travel-list)
+[Travel List](https://bvenceslas.github.io/challenge-travel-list/)
 
 ## Getting Started
 
