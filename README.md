@@ -2,6 +2,10 @@
 
 this is a simple travel list
 
+## Preview
+
+[Travel List](https://bvenceslas.github.io/travel-list)
+
 ## Getting Started
 
 The project is public and unlicensed
