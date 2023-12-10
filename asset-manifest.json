@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/travel-list/static/css/main.fdc828fe.css",
-    "main.js": "/travel-list/static/js/main.140e02c1.js",
-    "index.html": "/travel-list/index.html",
-    "main.fdc828fe.css.map": "/travel-list/static/css/main.fdc828fe.css.map",
-    "main.140e02c1.js.map": "/travel-list/static/js/main.140e02c1.js.map"
+    "main.css": "/challenge-travel-list/static/css/main.fdc828fe.css",
+    "main.js": "/challenge-travel-list/static/js/main.140e02c1.js",
+    "index.html": "/challenge-travel-list/index.html",
+    "main.fdc828fe.css.map": "/challenge-travel-list/static/css/main.fdc828fe.css.map",
+    "main.140e02c1.js.map": "/challenge-travel-list/static/js/main.140e02c1.js.map"
   },
   "entrypoints": [
     "static/css/main.fdc828fe.css",
